@@ -5,6 +5,7 @@ package ca.ualberta.cs.lonelytwitter;
  */
 
 import java.util.Date;
+import java.util.List;
 
 public interface Tweetable {
 
@@ -12,4 +13,5 @@ public interface Tweetable {
 
     Date getDate();
 
+    List<Mood> getMoodList();
 }

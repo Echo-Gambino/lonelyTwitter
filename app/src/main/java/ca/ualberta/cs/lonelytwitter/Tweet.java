@@ -12,22 +12,28 @@ public abstract class Tweet implements Tweetable {
     // Two attributes with access modifiers of private
     private String message;
     private Date date;
-    private List<Mood> moodList = new ArrayList<Mood>();
+    private List<Mood> moodList;
 
-    public Tweet(String message) { // Constructor #1
-        this.message = message;
+    public Tweet() { // Constructor #1
         this.date = new Date();
+        moodList = new ArrayList<Mood>();
         this.moodList.add(new MoodHappy());
         this.moodList.add(new MoodSad());
         this.moodList.add(new MoodNeutral());
     }
 
-    public Tweet(String message, Date date) { // Constructor #2
+    public Tweet(String message) { // Constructor #1
+        this();
         this.message = message;
+    }
+
+    public Tweet(String message, Date date) { // Constructor #2
+        this(message);
         this.date = date;
-        this.moodList.add(new MoodHappy());
-        this.moodList.add(new MoodSad());
-        this.moodList.add(new MoodNeutral());
+    }
+
+    public void addMood(Mood mood) {
+        this.moodList.add(mood);
     }
 
     public List<Mood> getMoodList() {
