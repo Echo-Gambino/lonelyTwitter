@@ -7,13 +7,14 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 public class MoodNeutral extends Mood {
-    MoodNeutral(String userMood) { super(userMood); }
 
-    MoodNeutral(String userMood, Date date) { super(userMood, date); }
+    MoodNeutral() { super(); }
+
+    MoodNeutral(Date date) { super(date); }
 
     @Override
-    public String getMoodText() {
-        return "#feelingNeutral.";
+    public String getMood() {
+        return "Neutral";
     }
 
 }

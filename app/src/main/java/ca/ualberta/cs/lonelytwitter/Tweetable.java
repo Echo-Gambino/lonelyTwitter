@@ -8,7 +8,7 @@ import java.util.Date;
 
 public interface Tweetable {
 
-    String getMessage();
+    String getMessage() throws TweetTooLongException;
 
     Date getDate();
 

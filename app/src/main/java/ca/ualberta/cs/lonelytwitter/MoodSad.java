@@ -7,13 +7,14 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 public class MoodSad extends Mood {
-    MoodSad(String userMood) { super(userMood); }
 
-    MoodSad(String userMood, Date date) { super(userMood, date); }
+    MoodSad() { super(); }
+
+    MoodSad(Date date) { super(date); }
 
     @Override
-    public String getMoodText() {
-        return "#feelingSad.";
+    public String getMood() {
+        return "Sad";
     }
 
 }
