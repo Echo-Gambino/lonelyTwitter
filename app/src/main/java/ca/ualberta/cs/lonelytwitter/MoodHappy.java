@@ -7,11 +7,11 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 public class MoodHappy extends Mood {
-    MoodHappy(Date date) { super(date); }
+    MoodHappy(String userMood) { super(userMood); }     // Example of inheritance
+
+    MoodHappy(String userMood, Date date) { super(userMood, date); }
 
     @Override
-    public String getMoodText() {
-        return "feeling Happy.";
-    }
+    public String getMoodText() { return "#feelingHappy."; }
 
 }

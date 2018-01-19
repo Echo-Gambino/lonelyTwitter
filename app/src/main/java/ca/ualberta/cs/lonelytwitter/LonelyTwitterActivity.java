@@ -40,7 +40,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 
-				Mood newMood = new Mood(new Date());
+				Mood newMood = new MoodHappy("Cool beans bro"); 	// Example of polyporphism?
 
 				saveInFile(text, new Date(System.currentTimeMillis()));
 				finish();
