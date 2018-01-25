@@ -1,64 +1,54 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by Henry on 2018-01-18.
+ * Created by sajediba on 1/17/18.
  */
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-public abstract class Tweet implements Tweetable {
-    // Two attributes with access modifiers of private
+public abstract class Tweet implements Tweetable{
+
     private String message;
     private Date date;
-    private List<Mood> moodList;
 
-    public Tweet() { // Constructor #1
-        this.date = new Date();
-        moodList = new ArrayList<Mood>();
-        this.moodList.add(new MoodHappy());
-        this.moodList.add(new MoodSad());
-        this.moodList.add(new MoodNeutral());
+    Tweet(){
+
     }
-
-    public Tweet(String message) { // Constructor #1
-        this();
+    public Tweet(String message){
         this.message = message;
     }
 
-    public Tweet(String message, Date date) { // Constructor #2
-        this(message);
+    public Tweet(String message, Date date){
+        this.message = message;
         this.date = date;
     }
 
-    public void addMood(Mood mood) {
-        this.moodList.add(mood);
-    }
-
-    public List<Mood> getMoodList() {
-        return this.moodList;
-    }
-
-    public Date getDate() {
+    public Date getDate(){
         return date;
+
     }
 
-    public void setDate(Date date) {
+    public String getMessage(){
+        return message;
+    }
+
+    public void setMessage(String message) throws TweetTooLongException{
+        if(message.length() > 160){
+            // throw an error
+            throw new TweetTooLongException();
+        }
+
+        this.message = message;
+    }
+
+    public void setDate(Date date){
         this.date = date;
     }
 
-    public String getMessage() {
-        return this.message;
-    }
+    public abstract boolean isImportant();
 
-    public void setMessage(String message) throws TweetTooLongException {
-        if (message.length() > 140) {
-            throw new TweetTooLongException();
-        } else {
-            this.message = message;
-        }
+    @Override
+    public String toString(){
+        return message;
     }
-
-    public abstract Boolean isImportant();
 }
