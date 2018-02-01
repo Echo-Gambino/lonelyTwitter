@@ -1,3 +1,10 @@
+/*
+ * January 31, 2018
+ *
+ * Copyright 2018 Hing Yue Lam
+ *
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
