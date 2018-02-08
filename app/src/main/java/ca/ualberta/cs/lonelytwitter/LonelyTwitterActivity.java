@@ -44,7 +44,7 @@ public class LonelyTwitterActivity extends Activity {
 
 		bodyText = (EditText) findViewById(R.id.body);
 		Button saveButton = (Button) findViewById(R.id.save);
-		Button clearButton = (Button) findViewById(R.id.clear);
+		Button queryButton = (Button) findViewById(R.id.query);
 		oldTweetsList = (ListView) findViewById(R.id.oldTweetsList);
 
 		saveButton.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,7 @@ public class LonelyTwitterActivity extends Activity {
 			}
 		});
 
-		clearButton.setOnClickListener(new View.OnClickListener() {
+		queryButton.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 				setResult(RESULT_OK);
