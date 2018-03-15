@@ -3,7 +3,9 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.ArrayList;
 
 public class TweetList {
-    private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
+    // Tweets is given a final modifier to make it so it doesn't need to be changed since it is never
+    // changed with some other ArrayList<Tweet>(), also there was never a chance to change its value to begin with.
+    private final ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 
     public TweetList(){
 
